@@ -1,0 +1,10 @@
+<app-project-item *ngFor="let project of projects"
+[item]="project" [ngClass]="divClass"
+(onInvite)="LaunchInviteDialog()"
+(onEdit)="LaunchUpdateDialog()"
+(onMove)="LaunchMoceDialog()">
+  <!--将project里面的每一项传递给这个子组件里面的item-->
+</app-project-item>
+<button class="fab-button" mat-fab type="button" (click)="openNewProjectDialog()">
+  <mat-icon>add</mat-icon>
+</button>

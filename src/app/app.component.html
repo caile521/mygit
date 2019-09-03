@@ -1,0 +1,18 @@
+<mat-sidenav-container [class.myapp-dark-theme]="darkTheme"><!--css类绑定-->
+  <mat-sidenav #sidenav mode="over">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+<div class="site">
+  <header>
+    <app-header (toggle)="sidenav.toggle()" (toggleDarkTheme)="switchTheme($event)"></app-header ><!--它去监听-->
+  </header>
+   <main>
+     <router-outlet></router-outlet>  
+     <!-- <div class="square" [@square]="squareState" (click)="onClick()"></div> -->
+   </main>
+   <footer>
+     <app-footer>
+     </app-footer>
+   </footer>
+</div>
+</mat-sidenav-container>
